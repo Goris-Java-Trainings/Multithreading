@@ -34,7 +34,7 @@ public class Bank {
         }
 
         // PECS
-        // happens before
+        // TODO happens before
 
         amount -= money;
         System.out.println("Finish!");
@@ -46,6 +46,5 @@ public class Bank {
         amount += balance;
     }
 
-    // TODO next synchronized, Monitor-s, wait, notify, notifyAll, volatile, deadlock, livelock, Concurrent Collections
     // TODO next -> Producer - Consumer problem, synchronizers
 }
