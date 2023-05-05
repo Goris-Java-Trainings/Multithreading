@@ -61,7 +61,8 @@ public class Main {
         Thread transaction1 = new Thread() {
             @Override
             public void run() {
-                bankAccount.transfer(100);
+                bankAccount.transfer(1000);
+                bankAccount.receive(233);
             }
         };
         transaction1.start();
@@ -69,21 +70,27 @@ public class Main {
         Thread transaction2 = new Thread() {
             @Override
             public void run() {
-                bankAccount.transfer(100);
+                bankAccount.transfer(500);
+                bankAccount.receive(233);
             }
         };
         transaction2.start();
+
+        Thread transaction3 = new Thread() {
+            @Override
+            public void run() {
+                bankAccount.transfer(200);
+            }
+        };
+        transaction3.start();
 
         /*bankAccount.transfer(100);
         bankAccount.transfer(100);*/
         /*transaction2.join();
         transaction1.join();*/
 
-        Thread.sleep(1);
-        System.out.println(bankAccount.getAmount());
-
-
-
+//        Thread.sleep(1);
+//        System.out.println(bankAccount.getAmount());
 
 
 
